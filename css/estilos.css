@@ -1,0 +1,340 @@
+body {
+    margin-top: 0;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #13132c;
+}
+
+h1 {
+    padding-left: 10px;
+    font-size: 28px;
+    border-left: 5px solid #4285F4;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+a:visited{
+    color: #053838;
+}
+
+section {
+    margin: 10px 5px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+}
+
+select,
+input {
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #afd5ec26;
+    border: 1px solid #13132c;
+    border-radius: 2px;
+}
+
+ul {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+li {
+    padding: 5px;
+    font-style: italic;
+}
+
+table {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+th, td {
+    text-align: center;
+}
+
+.button {
+    min-width: 100px;
+    height: 30px;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #4285F4;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.title { 
+    height: 50px;
+    background-position: center;
+    background-image: url(../img/titulo.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 35px;
+    color: white;
+    padding-left: 20px;
+    border-radius: 5px;
+}
+
+.title span {
+    vertical-align: middle;
+}
+
+nav{
+    margin-top: 10px;
+}
+
+.menu-item{
+    font-size: 18px;
+    margin: 5px;
+    text-decoration: none;
+    border-left: 3px solid #4285F4;
+    padding-left: 5px;
+}
+
+.container {
+    margin: 10px 0;
+    padding: 5px 10px;
+    background-color: #f9f9f9;
+    border-left: 2px solid #4285F4;
+    overflow-x: auto;
+}
+
+.input-container {
+    display: inline-block;
+    margin: 5px;
+}
+
+.info-container {
+    margin: 5px;
+}
+
+.small-input {
+    width: 60px;
+}
+
+.medium-input {
+    width: 120px;
+}
+
+.big-input {
+    width: 180px;
+}
+
+.icon-container {
+    text-align: center;
+}
+
+.icon {
+    height: 35px;
+    width: 35px;
+}
+
+.description-header {
+    text-align: initial;
+    max-width: 250px;
+}
+
+.description-container {
+    text-align: initial;
+    max-width: 250px;
+}
+
+.data {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.footer-info {
+    float: right;
+}
+
+.exito {
+    display: block;
+    margin-left: 5px;
+    font-weight: bold;
+    color: green;
+}
+
+.error {
+    display: block;
+    margin-left: 5px;
+    font-weight: bold;
+    color: red;
+}
+
+.advertencia {
+    display: block;
+    margin-left: 5px;
+    font-weight: bold;
+    color: orange;
+}
+
+.chart {
+    width: 100%;
+    height: 350px;
+    margin-top: 5px;
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+        color: white;
+        border: none;
+        background-color: #EC9703;
+    }
+
+    select,
+    input {
+        background-color: #FFF5E3;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    .button {
+        display: block;
+        margin-left: 0;
+        width: 100%;
+        background-color: #1F9602;
+    }
+
+    .title { 
+        height: 50px;
+        background-position: center;
+        background-image: url(../img/tituloresponsive.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-size: 35px;
+        text-align: center;
+        color: white;
+        padding-left: 20px;
+        border-radius: 5px;
+    }
+    nav{
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .menu-item{
+        display: inline-block;
+        font-size: 18px;
+        margin: 10px;
+        color: #EC9703;
+        text-decoration: none;
+        border: 2px solid #EC9703;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .container {
+        background-color: transparent;
+        border: 2px solid #EC9703;
+    }
+
+    .input-container {
+        display: block;
+        margin: 5px;
+    }
+
+    .small-input {
+        width: 15%;
+    }
+
+    .medium-input,
+    .big-input {
+        width: 96%;
+    }
+
+    .footer-info {
+        float: right;
+    }
+
+    .exito {
+        display: block;
+        margin-top: 5px;
+        margin-left: 5px;
+        color: green;
+    }
+
+    .error {
+        display: block;
+        margin-top: 5px;
+        margin-left: 5px;
+        color: red;
+    }
+
+    /* El codigo utilizado como ejemplo para dar estilo a las tablas en modo responsive fue obtenido de: https://css-tricks.com/responsive-data-tables/ */
+
+
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr { 
+        background-color: #FFF5E3;
+        border: 1px solid #EC9703; 
+        margin-bottom: 5px;
+    }
+
+    td { 
+        /* Behave  like a "row" */
+        min-height: 20px;
+        text-align: initial !important;
+        vertical-align: middle;
+        border: none;
+        position: relative;
+        padding-left: 40%; 
+        padding-top: 3px;
+    }
+
+    /*El codigo de ejemplo para aplicar este estilo fue obtenido de: http://lineadecodigo.com/css/tablas-estilo-cebra-con-css/ */
+    table td:nth-child(even) {
+        background-color: #FCD367;
+    }
+    
+    td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 3px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+    
+    /*
+    Label the data
+    */
+    td:nth-of-type(1):before { content: "Número"; }
+    td:nth-of-type(2):before { content: "Operador"; }
+    td:nth-of-type(3):before { content: "Descripción"; }
+    td:nth-of-type(4):before { content: "Motivo"; }
+    td:nth-of-type(5):before { content: "Descripción"; }
+    td:nth-of-type(6):before { content: "Celular"; }
+}
+
+/*
+    -----Autores-----
+
+    Enrique Perugorria, nro.: 220679
+    Alvaro Rameau, nro.: 182035
+
+*/

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Telecentro</title>
+    <script src="js/canvasjs.min.js"></script>
+    <script src="js/funciones.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <span>TELECENTRO</span>
+        </div>
+    </header>
+    <nav>
+        <a class="menu-item" href="#operadores">Operadores</a>
+        <a class="menu-item" href="#llamadas">Llamadas</a>
+        <a class="menu-item" href="#consultas">Consultas</a>
+    </nav>
+    <section id="operadores">
+
+        <h1>Manejo de Operadores</h1>
+        <div class="container">
+            <h2>Registro de Operadores </h2>
+            <form id="form-operador" action="#">
+                <div class="input-container">
+                    <label for="txt-nombre-operador">Nombre</label>
+                    <input class="medium-input" type="text" maxlength="20" id="txt-nombre-operador" required>
+                </div>
+                <div class="input-container">
+                    <label for="txt-edad-operador">Edad</label>
+                    <input class="small-input" type="number" min="18" max="65" id="txt-edad-operador" required>
+                </div>
+                <div class="input-container">
+                    <label for="txt-email-operador">Email</label>
+                    <input class="big-input" type="email" id="txt-email-operador" required>
+                </div>
+                <input class="button" type="button" id="btn-agregar-operador" value="Agregar">
+                <span class="exito" id="mensaje-operador"></span>
+            </form>
+        </div>
+        <div class="container">
+            <h2>Visualizaci&oacute;n de Operadores</h2>
+            <label>Orden</label>
+            <div id="radio-button-group-orden">
+                <input type="radio" value="nombre" name="radio-group-operador" checked="" id="radio-nombre">Nombre
+                <input type="radio" value="edad" name="radio-group-operador" id="radio-edad">Edad
+            </div>
+            <ul id="lista-operadores">
+            </ul>
+        </div>
+    </section>
+    <section id="llamadas">
+        <h1>Manejo de Llamadas</h1>
+        <div class="container">
+            <h2>Registro de llamadas</h2>
+            <form id="form-llamada" action="#">
+                <div class="input-container">
+                    <label for="select-operador-llamadas">Operador</label>
+                    <select id="select-operador-llamadas" required multiple>
+        			</select>
+                </div>
+                <div class="input-container">
+                    <label for="txt-descripcion">Descripci&oacute;n</label>
+                    <input class="big-input" type="text" id="txt-descripcion" required>
+                </div>
+                <div class="input-container">
+                    <label for="txt-motivo">Motivo</label>
+                    <input class="small-input" type="number" min="1" max="6" id="txt-motivo" required>
+                </div>
+                <div class="input-container">
+                    <label for="txt-duracion">Duraci&oacute;n</label>
+                    <input class="small-input" type="number" min="1" max="60" id="txt-duracion" required>
+                </div>
+                <div class="input-container">
+                    <label for="txt-celular">Celular</label>
+                    <input class="medium-input" type="text" id="txt-celular" minlength="9" maxlength="9" required>
+                </div>
+                <input class="button" type="button" id="btn-agregar-llamada" value="Agregar">
+             <span class="exito" id="mensaje-llamada" ></span>
+            </form>
+        </div>
+        <div class="container">
+            <h2>Muestra de llamadas</h2>
+            <label>Orden</label>
+            <div id="radio-button-group-llamadas">
+                <input type="radio" name="radio-llamadas" checked id="radio-numero">N&uacute;mero
+                <input type="radio" name="radio-llamadas" id="radio-nombre-numero">Nombre/n&uacute;mero
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>N&Uacute;MERO</th>
+                        <th>OPERADOR</th>
+                        <th class="description-header">DESCRIPCI&Oacute;N</th>
+                        <th>MOTIVO</th>
+                        <th>DURACI&Oacute;N</th>
+                        <th>CELULAR</th>
+                    </tr>
+                </thead>
+                <tbody id="body-table-llamada" >
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section id="consultas">
+        <h1>Consultas</h1>
+        <div class="container">
+            <h2>Consulta por operador</h2>
+            <form>
+                <div class="input-container">
+                    <label for="select-operador-consultas">Operador</label>
+                    <select id="select-operador-consultas">
+    			    </select>
+                </div>
+                <input class="button" type="button" id="btn-consultar-historia" value="Consultar historia">
+            </form>
+            <div name="resultado-consulta-por-operador" class="info-container">
+                <label>Motivos no atendi&oacute;</label>
+                <div id="iconos-motivo-no-atendio">
+                </div>
+            </div>
+            <div class="info-container" name="resultado-consulta-por-operador">
+                <label>Llamada mas larga</label>
+                <span id="llamada-larga-operador" class="data"></span>
+            </div>
+            <div class="info-container" name="resultado-consulta-por-operador">
+                <label>Tiempo promedio de atenci&oacute;n</label>
+                <span id="promedio-llamadas-operador" class="data"></span>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Consultas por llamado</h2>
+            <div>
+                <div class="input-container">
+                    <label for="txt-duracion-consulta">Duraci&oacute;n</label>
+                    <input class="small-input" type="number" id="txt-duracion-consulta">
+                </div>
+                <input class="button" type="button" id="btn-consultar-operadores-duracion" value="Consultar operadores m&aacute;s llamadas de esa duraci&oacute;n">
+                <ul id="lista-duracion">
+                    </ul>
+            </div>
+            <div>
+                <div class="input-container">
+                    <label for="txt-palabra-consulta">Palabra</label>
+                    <input class="medium-input" type="text" id="txt-palabra-consulta">
+                </div>
+                <input class="button" type="button" id="btn-consultar-palabras" value="Consultar palabras">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>N&Uacute;MERO</th>
+                            <th>OPERADOR</th>
+                            <th class="description-header">DESCRIPCI&Oacute;N</th>
+                            <th>MOTIVO</th>
+                            <th>DURACI&Oacute;N</th>
+                            <th>CELULAR</th>
+                        </tr>
+                    </thead>
+                    <tbody id="body-tabla-palabras">
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <input class="button" type="button" id="btn-distribucion" value="Distribuci&oacute;n de llamadas">
+                <div id="chartContainer" class="chart advertencia"></div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <a href="#">Ir al tope</a>
+        <span class="footer-info">Autores: Enrique Perugorria, Alvaro Rameau</span>
+    </footer>
+</body>
+<!--
+    Autores
+
+    Enrique Perugorria, nro.: 220679
+    Alvaro Rameau, nro.: 182035
+ -->
+
+</html>
